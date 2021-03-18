@@ -10,9 +10,10 @@
                 <div class="load-animate animated fadeInUp">
                     <div class="row">
                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                            <h2 class="title">Invoice System</h2>
+                            <h2 class="title">Order List</h2>
 
                         </div>
+                        <br>
                     </div>
                     <input id="currency" type="hidden" value="$">
                     <div class="row">
@@ -23,15 +24,15 @@
                             <table class="table table-bordered table-hover" id="invoiceItem">
                                 <tr>
                                     <th width="15%">order No</th>
-                                    <th width="38%">Item Name</th>
+                                    <th width="38%">Email</th>
                                     <th width="8%">Print</th>
-                                    
+
                                 </tr>
                                 @foreach($data as $row)
                                 <tr>
 
                                     <td>{{$row->order_id}}</td>
-                                    <td></td>
+                                    <td>{{ Auth::user()->email }}</td>
                                     <td><a href="{{route('print.pdf', ['id' => $row->order_id])}}" title="Print Invoice"><span class="glyphicon glyphicon-print"></span></a></td>
 
                                 </tr>
@@ -43,7 +44,7 @@
                     <div class="row">
 
 
-
+                    <a href="{{ URL::to('/home') }}">Go to Home Page</a></h3>
 
 
 
@@ -57,13 +58,5 @@
     </div>
 </div>
 </div>
-<script>
-    // $(document).on('click', '#save', function(){
-    //     var product = $("#productCode_'+count+'").val();
-    //     alert(product); 
-    // });
-    $("#invoice-form").submit(function() {
-        console.log($(this).serializeArray());
-    });
-</script>
+
 @endsection

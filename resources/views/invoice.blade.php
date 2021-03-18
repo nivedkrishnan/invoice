@@ -120,48 +120,60 @@
 
 				<tr class="heading">
 					<td colspan="0">Product</td>
-					<td>price</td>
-                    <td>quntity</td>
+					<td>Price</td>
+                    <td></td>
+                    <td>Quantity</td>
                     <td>Total</td>
 				</tr>
                 @foreach($orders as $order)
 				<tr class="details">
 					<td colspan="0">{{$order['product']}}</td>
                     <td>{{$order['price']}}</td>
+                    <td></td>
                     <td>{{$order['quantity']}}</td>
-                    <td>{{$order['total_amount']}}</td>
+                    <td>$ {{$order['total_amount']}}</td>
 
 				</tr>
                 @endforeach
 
 				<tr class="heading">
 					<td>Subtotal</td>
-
-					<td>{{$totalOrder->subtotal}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>$ {{$totalOrder->subtotal}}</td>
 				</tr>
 
 				<tr class="item">
 					<td>Tax Amount</td>
-
-					<td>{{$totalOrder->tax_amount}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>$ {{$totalOrder->tax_amount}}</td>
 				</tr>
 
 				<tr class="item">
 					<td>Total</td>
-
-					<td>{{$totalOrder->mrp_total}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>$ {{$totalOrder->mrp_total}}</td>
 				</tr>
 
-				<tr class="item last">
+				<tr class="item">
 					<td>discount</td>
-
-					<td>{{$totalOrder->discount}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>$ {{$totalOrder->discount}}</td>
 				</tr>
 
-				<tr class="total">
+				<tr class="heading">
 					<td>Grand Total</td>
-
-					<td>{{$totalOrder->grand_total}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>$ {{$totalOrder->grand_total}}</td>
 				</tr>
 			</table>
 		</div>
