@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="row">
-                        
+
 
                         <div class="col-md-12">
                             <span class="form-inline">
@@ -61,6 +61,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Tax Rate: &nbsp;</label>
+                                    <!-- <select name="taxRate" id="taxRate">
+                                        <option value="">--Please choose an option--</option>>
+                                        <option value="0%">0%</option>
+                                        <option value="1%">1%</option>
+                                        <option value="5%">5%</option>
+                                        <option value="10%">10%</option>
+                                    </select> -->
                                     <div class="input-group">
                                         <input value="" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
                                         <div class="input-group-addon">%</div>
@@ -81,29 +88,29 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-							<label>Discount: &nbsp;</label>
-							<div class="input-group">
-								<div class="input-group-addon currency">$</div>
-								<input value="" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Discount">
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Grand total: &nbsp;</label>
-							<div class="input-group">
-								<div class="input-group-addon currency">$</div>
-								<input value="" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Grand Total">
-							</div>
-						</div>
+                                    <label>Discount: &nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon currency">$</div>
+                                        <input value="" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Discount">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Grand total: &nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon currency">$</div>
+                                        <input value="" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Grand Total">
+                                    </div>
+                                </div>
 
-                                
+
                             </span>
                         </div>
                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                            
+
                             <br>
                             <div class="form-group">
                                 <input type="hidden" value="{{ auth()->user()->id }}" class="form-control" name="userId" id="userId">
-                                <input data-loading-text="Saving Invoice..." type="submit" name="invoice_btn" value="Save Invoice" class="btn btn-success submit_btn invoice-save-btm" id="save">
+                                <input data-loading-text="Saving Invoice..." type="submit" name="invoice_btn" value="Generate Invoice" class="btn btn-success submit_btn invoice-save-btm" id="save">
                             </div>
 
                         </div>
@@ -117,12 +124,12 @@
 </div>
 </div>
 <script>
-// $(document).on('click', '#save', function(){
-//     var product = $("#productCode_'+count+'").val();
-//     alert(product); 
-// });
-$("#invoice-form").submit(function(){
-  console.log($(this).serializeArray());
-});
+    // $(document).on('click', '#save', function(){
+    //     var product = $("#productCode_'+count+'").val();
+    //     alert(product); 
+    // });
+    $("#invoice-form").submit(function() {
+        console.log($(this).serializeArray());
+    });
 </script>
 @endsection
