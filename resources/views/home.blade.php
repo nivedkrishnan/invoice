@@ -16,16 +16,20 @@
                     </div>
                     <input id="currency" type="hidden" value="$">
                     <div class="row">
+
                     </div>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <div class="col-md-12">
+                            @if($errors->any())
+                            <h4 class="text-danger">{{$errors->first()}}</h4>
+                            @endif
                             <button class="btn btn-danger delete" id="removeRows" type="button">- Delete</button>
                             <button class="btn btn-success" id="addRows" type="button">+ Add More</button>
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-md-12">
                             <table class="table table-bordered table-hover" id="invoiceItem">
                                 <tr>
                                     <th width="2%"><input id="checkAll" class="formcontrol" type="checkbox"></th>
@@ -84,21 +88,21 @@
                                     <label>Total: &nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon currency">$</div>
-                                        <input value="" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+                                        <input value="" type="number" class="form-control" name="total" id="total" placeholder="Total">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Discount: &nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon currency">$</div>
-                                        <input value="" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Discount">
+                                        <input value="" type="number" class="form-control" name="discount" id="discount" placeholder="Discount">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Grand total: &nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon currency">$</div>
-                                        <input value="" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Grand Total">
+                                        <input value="" type="number" class="form-control" name="grand_total" id="grand_total" placeholder="Grand Total">
                                     </div>
                                 </div>
 

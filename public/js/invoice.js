@@ -39,14 +39,14 @@ $(document).ready(function(){
 	$(document).on('blur', "#taxRate", function(){		
 		calculateTotal();
 	});	
-	$(document).on('blur', "#amountPaid", function(){
-		var amountPaid = $(this).val();
-		var totalAftertax = $('#totalAftertax').val();	
-		if(amountPaid && totalAftertax) {
-			totalAftertax = totalAftertax-amountPaid;			
-			$('#amountDue').val(totalAftertax);
+	$(document).on('blur', "#discount", function(){
+		var discount = $(this).val();
+		var total = $('#total').val();	
+		if(discount && total) {
+			total = total-discount;			
+			$('#grand_total').val(total);
 		} else {
-			$('#amountDue').val(totalAftertax);
+			$('#grand_total').val(total);
 		}	
 	});	
 	
@@ -56,7 +56,9 @@ function calculateTotal(){
 	$("[id^='price_']").each(function() {
 		var id = $(this).attr('id');
 		id = id.replace("price_",'');
+		// alert(id);
 		var price = $('#price_'+id).val();
+		// alert(price);
 		var quantity  = $('#quantity_'+id).val();
 		if(!quantity) {
 			quantity = 1;
@@ -72,14 +74,14 @@ function calculateTotal(){
 		var taxAmount = subTotal*taxRate/100;
 		$('#taxAmount').val(taxAmount);
 		subTotal = parseFloat(subTotal)+parseFloat(taxAmount);
-		$('#totalAftertax').val(subTotal);		
-		var amountPaid = $('#amountPaid').val();
-		var totalAftertax = $('#totalAftertax').val();	
-		if(amountPaid && totalAftertax) {
-			totalAftertax = totalAftertax-amountPaid;			
-			$('#amountDue').val(totalAftertax);
+		$('#total').val(subTotal);		
+		var discount = $('#discount').val();
+		var total = $('#total').val();	
+		if(discount && total) {
+			total = total-discount;			
+			$('#grand_total').val(total);
 		} else {		
-			$('#amountDue').val(subTotal);
+			$('#grand_total').val(subTotal);
 		}
 	}
 }
